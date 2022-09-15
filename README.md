@@ -1,4 +1,4 @@
-# NBA Dream Team Back End
+# NBA Dream Team 
 ## Date: 9/12/2022
 #### By: Will Fitzgerald
 
@@ -19,19 +19,19 @@ An application that allows users to:
 ***
 
 #### *Technologies Used*
-* Django
+* MongoDB
+* MongoDB Compass
 * React JS
 * Express
 * Node.JS
-* PostGres
+* Redux
+* JWT
 * Github
 
 ***
 
 #### _Project Overview_
-This website allows users to go back and relive the NBA season of 2021-2022. View the stats of each team, the players, and the records. Create your own team of players, and battle against other users to see who takes home the ring. Each team created will have players that have a score linked to them, and the average score of the team will determine who wins and who loses. 
-
-
+This website allows users to go pick and draft their very own dream team. With 30 teams in the NBA, and around 13-15 players per team, the options are endless. Hand pick your roster and swing through to create your very own NBA Dream Team.
 
 
 
@@ -39,11 +39,6 @@ This website allows users to go back and relive the NBA season of 2021-2022. Vie
 
 ### **_Screenshots_**
 
-![HOME]()
-
-![EASTERN]()
-
-![WESTERN]()
 
 
 #### **Entity Relationship Diagram**
@@ -60,7 +55,9 @@ This website allows users to go back and relive the NBA season of 2021-2022. Vie
 
 #### _Future Updates_
 
-- []  
+- [] Have players battle against eachother.
+- [] Add a personal rating to each player.
+- [] Implement a currency system that allows the purchasing of players.  
 
 ---
 
@@ -68,5 +65,11 @@ This website allows users to go back and relive the NBA season of 2021-2022. Vie
 
 - Draw.io
 - Heroku
-- Bleacher Report
+- StackOverflow
 - RapidAPI
+- Classmates
+- MongoDB
+- YouTube
+- General Assembly
+- MDN
+ 
