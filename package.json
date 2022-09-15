@@ -1,0 +1,23 @@
+{
+  "name": "nbadtbe",
+  "version": "1.0.0",
+  "description": "**[LinkedIN](https://www.linkedin.com/in/william-fitzgerald1/) | [GitHub](https://github.com/willfitz1) | [Trello](https://trello.com/b/122ZUsDe/stats-from-the-past)**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willfitz1/NBADTBE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willfitz1/NBADTBE/issues"
+  },
+  "homepage": "https://github.com/willfitz1/NBADTBE#readme",
+  "dependencies": {
+    "mongoose": "^6.6.1"
+  }
+}
