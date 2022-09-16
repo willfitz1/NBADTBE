@@ -35,6 +35,10 @@ const deleteTeamById = async (req, res) => {
   try {
     let teamId = req.params.team_id
     let team = await Team.findByIdAndDelete(teamId)
+    if (team) {
+      return res.status(200).send('Team deleted')
+    }
+    throw new Error('Team not found')
   } catch (error) {
     throw error
   }
