@@ -1,38 +1,44 @@
 const { Router } = require('express')
 const router = Router()
 const { playerController } = require('../controllers')
+const middleware = require('../middleware')
 
 // get routes
 
 router.get(
   '/',
-  // userController.stripToken,
-  // userController.verifyToken,
+  middleware.stripToken,
+  middleware.verifyToken,
   playerController.getAllPlayers
 )
 router.get(
   '/:id',
-  // userController.stripToken,
-  // userController.verifyToken,
+  middleware.stripToken,
+  middleware.verifyToken,
   playerController.getPlayerByTeam
 )
 
 // post routes
-router.post('/new', playerController.createPlayer)
+router.post(
+  '/new',
+  middleware.stripToken,
+  middleware.verifyToken,
+  playerController.createPlayer
+)
 
 // update routes
 router.put(
   '/:id',
-  // userController.stripToken,
-  // userController.verifyToken,
+  middleware.stripToken,
+  middleware.verifyToken,
   playerController.updatePlayerById
 )
 
 // delete routes
 router.delete(
   '/:id',
-  // userController.stripToken,
-  // userController.verifyToken,
+  middleware.stripToken,
+  middleware.verifyToken,
   playerController.deletePlayerById
 )
 

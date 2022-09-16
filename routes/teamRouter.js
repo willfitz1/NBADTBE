@@ -9,15 +9,15 @@ router.get('/:team_id', controller.getTeamById)
 
 router.post(
   '/:team_id',
-  // middleware.stripToken,
-  // middleware.verifyToken,
+  middleware.stripToken,
+  middleware.verifyToken,
   controller.createTeam
 )
 
 router.delete(
   '/:team_id',
-  // middleware.stripToken,
-  // middleware.verifyToken,
+  middleware.stripToken,
+  middleware.verifyToken,
   controller.deleteTeamById
 )
 
