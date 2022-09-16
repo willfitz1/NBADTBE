@@ -21,29 +21,32 @@ const getAllTeams = async (req, res) => {
   }
 }
 
-const getTeamByUser = async (req, res) => {
+const getTeamById = async (req, res) => {
   try {
-    user_Id = parseInt(req.params.user_id)
-    let allTeams = await Team.findAll({ where: { userId: user_Id } })
-    res.send(allTeams)
+    let teamId = req.params.team_id
+    let team = await Team.findById(teamId)
+    res.send(team)
   } catch (error) {
     throw error
   }
 }
 
-const deleteTeam = async (req, res) => {
+const deleteTeamById = async (req, res) => {
   try {
-    let teamId = parseInt(req.params.team_id)
-    await Team.destroy({ where: { id: teamId } })
-    res.send({ message: 'Team deleted.' })
+    const { id } = req.params
+    const deleted = await Team.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Team deleted')
+    }
+    throw new Error('Team not found!')
   } catch (error) {
-    throw error
+    return res.status(500).send(error.message)
   }
 }
 
 module.exports = {
   getAllTeams,
   createTeam,
-  deleteTeam,
-  getTeamByUser
+  deleteTeamById,
+  getTeamById
 }
