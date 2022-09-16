@@ -26,6 +26,13 @@ router.post(
   playerController.createPlayer
 )
 
+router.post(
+  '/new/:team_id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  playerController.createPlayerForTeam
+)
+
 // update routes
 router.put(
   '/:id',

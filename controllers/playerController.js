@@ -23,11 +23,11 @@ const getAllPlayers = async (req, res) => {
 
 const getPlayerByTeam = async (req, res) => {
   try {
-    user_Id = parseInt(req.params.user_id)
-    let allPlayers = await Player.findAll({ where: { userId: user_Id } })
-    res.send(allPlayers)
+    const { id } = req.params
+    const players = await Player.find({ team: id })
+    return res.status(200).json({ players })
   } catch (error) {
-    throw error
+    return res.status(500).send(error.message)
   }
 }
 
@@ -55,10 +55,25 @@ const deletePlayerById = async (req, res) => {
   }
 }
 
+const createPlayerForTeam = async (req, res) => {
+  try {
+    let teamId = req.params.team_id
+    let playerBody = {
+      teamId,
+      ...req.body
+    }
+    let player = await Player.create(playerBody)
+    res.send(player)
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   getAllPlayers,
   createPlayer,
   updatePlayerById,
   deletePlayerById,
-  getPlayerByTeam
+  getPlayerByTeam,
+  createPlayerForTeam
 }
