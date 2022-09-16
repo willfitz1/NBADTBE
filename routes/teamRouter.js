@@ -5,26 +5,26 @@ const middleware = require('../middleware')
 
 router.get('/all', controller.getAllTeams)
 
-router.get(
-  '/:user_id',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.getTeamByUser
-)
+// router.get(
+//   '/:user_id'
+// middleware.stripToken,
+// middleware.verifyToken,
+// controller.getTeamByUser
+// )
 router.post(
   '/:user_id',
   // middleware.stripToken,
   // middleware.verifyToken,
   controller.createTeam
 )
-// Router.put(
-//   '/:playlist_id',
-//   middleware.stripToken,
-//   middleware.verifyToken,
-//   controller.updateTeam
-// )
+router.put(
+  '/:team_id',
+  // middleware.stripToken,
+  // middleware.verifyToken,
+  controller.updateTeamById
+)
 router.delete(
-  '/:playlist_id',
+  '/:team_id',
   middleware.stripToken,
   middleware.verifyToken,
   controller.deleteTeam

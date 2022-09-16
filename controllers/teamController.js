@@ -31,19 +31,16 @@ const getTeamByUser = async (req, res) => {
   }
 }
 
-// const updateTeam = async (req, res) => {
-//   try {
-//     let teamId = req.params.team_id
-//     let updatedTeam = await Team.update(req.body, {
-//       where: {
-//         id: teamId
-//       }
-//     })
-//     res.send(updatedTeam)
-//   } catch (error) {
-//     throw error
-//   }
-// }
+const updateTeamById = async (req, res) => {
+  try {
+    const team = await Team.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    })
+    res.status(200).json(team)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 
 const deleteTeam = async (req, res) => {
   try {
@@ -58,7 +55,7 @@ const deleteTeam = async (req, res) => {
 module.exports = {
   getAllTeams,
   createTeam,
-  // updateTeam,
+  updateTeamById,
   deleteTeam,
   getTeamByUser
 }
