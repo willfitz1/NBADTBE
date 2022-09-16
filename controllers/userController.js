@@ -1,8 +1,4 @@
 const { User } = require('../models')
-// const jwt = require('jsonwebtoken')
-// const bcrypt = require('bcrypth')
-// const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS)
-// const APP_SECRET = `${process.env.APP_SECRET}`
 
 const registerUser = async (req, res) => {
   try {
