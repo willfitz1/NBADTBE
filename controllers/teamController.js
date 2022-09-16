@@ -31,17 +31,6 @@ const getTeamByUser = async (req, res) => {
   }
 }
 
-const updateTeamById = async (req, res) => {
-  try {
-    const team = await Team.findByIdAndUpdate(req.params.id, req.body, {
-      new: true
-    })
-    res.status(200).json(team)
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
 const deleteTeam = async (req, res) => {
   try {
     let teamId = parseInt(req.params.team_id)
@@ -55,7 +44,6 @@ const deleteTeam = async (req, res) => {
 module.exports = {
   getAllTeams,
   createTeam,
-  updateTeamById,
   deleteTeam,
   getTeamByUser
 }

@@ -17,12 +17,6 @@ router.post(
   // middleware.verifyToken,
   controller.createTeam
 )
-router.put(
-  '/:team_id',
-  // middleware.stripToken,
-  // middleware.verifyToken,
-  controller.updateTeamById
-)
 router.delete(
   '/:team_id',
   middleware.stripToken,
