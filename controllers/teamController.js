@@ -2,15 +2,13 @@ const { Team } = require('../models')
 
 const createTeam = async (req, res) => {
   try {
-    let userId = parseInt(req.params.user_id)
-    let teamBody = {
-      userId,
-      ...req.body
-    }
-    let team = await Team.create(teamBody)
-    res.send(team)
+    const team = await new Team(req.body)
+    await team.save()
+    return res.status(201).json({
+      team
+    })
   } catch (error) {
-    throw error
+    return res.status(500).json({ error: error.message })
   }
 }
 

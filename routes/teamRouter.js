@@ -13,8 +13,8 @@ router.get(
 )
 router.post(
   '/:user_id',
-  middleware.stripToken,
-  middleware.verifyToken,
+  // middleware.stripToken,
+  // middleware.verifyToken,
   controller.createTeam
 )
 // Router.put(
